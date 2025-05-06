@@ -1,18 +1,21 @@
 import os
 import json
+from PIL import Image
+from datasets import Dataset
 import pandas as pd
 
+# Load caption.json
 with open("caption.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
+# Prepare list for HF dataset
 records = []
 for item in data:
-    image_path = os.path.join("dataset", item["file"])
-    if os.path.exists(image_path):
-        records.append({"image": image_path, "text": item["text"]})
-    else:
-        print("⚠️ Missing image:", image_path)
+    path = os.path.join("dataset", item["file"])
+    if os.path.exists(path):
+        records.append({"image": path, "text": item["text"]})
 
+# Save as CSV for HuggingFace Dataset
 df = pd.DataFrame(records)
-df.to_csv("train_data.csv", index=False)
-print("✅ train_data.csv generated.")
+df.to_csv("hf_data.csv", index=False)
+print("Hugging Face dataset ready.")
