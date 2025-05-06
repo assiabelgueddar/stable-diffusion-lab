@@ -101,7 +101,7 @@ print(ds["train"][0])
 
 ---
 
-## 📁 Structure recommandée
+##  Structure recommandée
 
 ```
 stable-diffusion-lab/
@@ -128,6 +128,4 @@ stable-diffusion-lab/
 Ce projet a été initialement préparé par **Assia Belgueddar**.
 Pour toute question ou collaboration : [GitHub Profile](https://github.com/assiabelgueddar)
 
----
 
-Souhaites-tu que je te génère ce fichier en `.md` prêt à être ajouté dans ton dépôt GitHub ?
